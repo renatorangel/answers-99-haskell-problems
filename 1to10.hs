@@ -28,3 +28,18 @@ myButLast [] = error "No end for empty lists!"
 myButLast [x] = error "No end for lists with one element!" 
 myButLast (x:y:[]) = x
 myButLast (x:xs) = myButLast xs 
+
+{-
+Problem 3
+(*) Find the K'th element of a list. The first element in the list is number 1.
+Example in Haskell:
+ elementAt [1,2,3] 2
+ 2
+ elementAt "haskell" 5
+ 'e'
+-}
+
+elementAt :: [a] -> Int -> a
+elementAt (x:xs) 1 = x
+elementAt (x:xs) n = elementAt xs (n - 1) 
+
