@@ -65,9 +65,14 @@ Example in Haskell:
  "!amanap ,lanac a ,nalp a ,nam A"
  myReverse [1,2,3,4]
  [4,3,2,1]
+
+
+myReverse :: [a] -> [a]
 -}
 
-
+myReverse [] = error "Impossible to reverse an empty list"
+myReverse (x:[]) = [x]
+myReverse (x:xs) = (myReverse xs ++ [x])
 
 {-
 Problem 6
